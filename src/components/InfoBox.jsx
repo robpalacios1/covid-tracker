@@ -11,7 +11,9 @@ const Infobox = (props) => {
                 </Typography>
 
                 {/** Number os cases */}
-                <h2 className="infoBox__cases">{props.cases}</h2>
+                <h2 className="infoBox__cases">
+                    {props.cases}
+                </h2>
 
                 {/** Total of cases */}
                 <Typography className="infoBox__total" color="textSecondary">
