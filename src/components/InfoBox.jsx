@@ -2,23 +2,26 @@ import React from 'react';
 import './InfoBox.css'
 import { Card, CardContent, Typography} from '@material-ui/core';
 
-const Infobox = (props) => {
+const Infobox = ({ title, cases, active, total, ...props }) => {
     return (
-        <Card className="infoBox">
+        <Card 
+            onClick={props.onClick}
+            className={`infoBox ${active && 'infoBox--selected'}`}
+        >
             <CardContent>
                 {/** Title i.e Coronavirus */}
                 <Typography className="infoBox__title" color="textSecondary">
-                    {props.title}
+                    {title}
                 </Typography>
 
                 {/** Number os cases */}
                 <h2 className="infoBox__cases">
-                    {props.cases}
+                    {cases}
                 </h2>
 
                 {/** Total of cases */}
                 <Typography className="infoBox__total" color="textSecondary">
-                    {props.total} Total
+                    {total} Total
                 </Typography>
             </CardContent>
         </Card>
